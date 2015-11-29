@@ -32,9 +32,8 @@
 		mysqli_query($mysqli_connect, $query);
 		
 		$query = "INSERT INTO accounts (Name, Username, Password, Email, Type) ";
-		$query .= " VALUES ('Chris Tseng', 'ctseng', 'ctseng', ctseng@sample.com', 'student')";
-		mysqli_query($mysqli_connect, $query);
-		
+		$query .= " VALUES ('Chris Tseng', 'ctseng', 'ctseng', 'ctseng@sample.com', 'student')";
+		mysqli_query($mysqli_connect, $query);		
 	} else { 
 		echo "Error creating table: " . mysqli_error($mysqli_connect);
 	}
