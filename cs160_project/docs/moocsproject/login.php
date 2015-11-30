@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="This is the home page for the CS160 Group 1 MOOCS Project">
+    <meta name="author" content="Alvin Ko">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Login</title>
+    <title>Home</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -24,7 +25,7 @@
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
-    <?php
+        <?php
       $username = "";
       $password = "";
       $mysqli = mysqli_connect("localhost", "root", "", "moocs160"); 
@@ -70,6 +71,11 @@
       }
     ?>
 
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
   </head>
 
   <body>
@@ -87,42 +93,71 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li ><a href="index.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="course.php">Courses</a></li>
+            <li><a href="courses.php">Courses</a></li>
             <li class="active"><a href="login.php">Login</a></li>
             <li><a href="signup.php">Sign Up</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
+      </div>
     </nav>
 
+    <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="container">
+      <div class="jumbotron">
+        <div class= "trans">
+        <h1>Welcome to</h1>
+        <p>Group 1 MOOCS Project</p>
+        <p><a class="btn btn-primary btn-lg" href="about.html" role="button">Learn more &raquo;</a></p>
+      </div>
+      </div>
+    </div>
 
-      <div class="starter-template">
-        <img src="image/cutecat.png" alt="CAT" height ="617" width ="832">
-        <h1>Existing User Login</h1>
-        <form action = "<?php $PHP_SELF ?>" name = "login" id = "login" class = "login" method = "POST">
-            <input type="hidden" name="test" value="login">
+    <!--TO REPLACE-->
+    <div class="container">
+    <hr class="featurette-divider">
+      <!-- Example row of columns -->
+        <div class="row col-md-6" style="background-color:white">
+          <img src = "image/logo1.png" alt = "logo">
+        </div>
 
-            <!--SET FIRST NAME-->
-            <label for = "username">Username: </label>
-            <input type = "text" name = "username" id = "username" value= "<?php if(isset($_POST["username"])) echo $_POST["username"]; ?>">
-            <br />
+        <div class="row col-md-6" style="background-color:white">
+          <h2>Existing User Login</h2>
+            <form role="form" action = "" name = "login" id = "login" class = "login" method = "POST">
+              <input type="hidden" name="test" value="login">
+              
+              <!--Set Username-->
+              <div class="form-group">            
+                <label for="username">Username</label>
+                <input type="text" class="form-control" name = "username" id="username" placeholder="Enter Username" value= "">
+              </div>
 
-            <!--SET PASSWORD-->
-            <label for = "password">Password: </label>
-            <input type = "password" name = "password" id= "password" value="<?php if(isset($_POST["password"]))echo $_POST["password"]; ?>">
-            <br />
+              <!--Set Password-->
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="text" class="form-control" name = "password" id="password" placeholder="Enter Password" value= "">
+              </div>
 
-            <!--Submit-->
-            <input type = "submit" value = "login"/>
-        </form>
+              <div class="checkbox">
+                <label><input type="checkbox"> Remember me</label>
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
       </div>
 
-    </div><!-- /.container -->
 
+    
+    <div class="container">
+      <hr class="featurette-divider">
+    <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2015 Project SANDS &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+    </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

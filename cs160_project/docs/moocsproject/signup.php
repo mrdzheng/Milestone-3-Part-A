@@ -1,28 +1,29 @@
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <link rel="icon" href="../../favicon.ico">
 
-      <title>Login</title>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="This is the home page for the CS160 Group 1 MOOCS Project">
+    <meta name="author" content="Alvin Ko">
+    <link rel="icon" href="../../favicon.ico">
 
-      <!-- Bootstrap core CSS -->
-      <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Home</title>
 
-      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-      <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 
-      <!-- Custom styles for this template -->
-      <link href="jumbotron.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
-      <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-      <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-      <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
       <?php
       //CONNECTING TO THE DATABASE
@@ -104,95 +105,125 @@
         //GO TO ANOTHER PHP SCRIPT
         header('Location: index.html');
       }
-    ?>  
+    ?>
 
-    </head>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
 
-    <body>
+  <body>
 
-      <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html">Project SAND</a>
-          </div>
-          <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-              <li ><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="course.php">Courses</a></li>
-              <li><a href="login.php">Login</a></li>
-              <li class="active"><a href="#">Sign Up</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </nav>
-
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Project SAND</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="courses.php">Courses</a></li>
+            <li><a href="login.php">Login</a></li>
+            <li class="active"><a href="signup.php">Sign Up</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+      </div>
+    </nav>
 
-        <div class="starter-template">
-          <img src="image/cutecat.png" alt="CAT" height ="617" width ="832">
-          <h1>Sign up now for an account! </h1>
-  <p>Already have an account?</p>
-  <button type = "button"><a href = "p9_Login.php">Click Here!</a></button>
-  <form action = "<?php $PHP_SELF ?>" name = "validator" id = "validator" class = "validator" method = "POST">
-    <input type="hidden" name="test" value="login">
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="container">
+      <div class="jumbotron">
+        <div class= "trans">
+        <h1>Welcome to</h1>
+        <p>Group 1 MOOCS Project</p>
+        <p><a class="btn btn-primary btn-lg" href="about.html" role="button">Learn more &raquo;</a></p>
+      </div>
+      </div>
+    </div>
 
-    <!--SET FIRST NAME-->
-    <label for = "name">Enter in a name:</label>
-      <input type = "text" name = "name" id = "name" value= "<?php if(isset($_POST["name"])) echo $_POST["name"]; ?>">
-      <br />
-      
-      <!--SET USERNAME-->
-    <label for = "username">Enter in username:</label>
-      <input type = "text" name = "username" id= "username" value="<?php if(isset($_POST["username"]))echo $_POST["username"]; ?>">
-      <br />
-      
-      <!--SET PASSWORD-->
-    <label for = "password">Enter in password:</label>
-      <input type = "password" name = "password" id= "password" value="<?php if(isset($_POST["password"]))echo $_POST["password"]; ?>">
-      <br />
-      
-      <!--SET EMAIL-->
-    <label for = "email">Enter in email:</label>
-      <input type = "email" name = "email" id= "email" value="<?php if(isset($_POST["email"]))echo $_POST["email"]; ?>">
-      <br />
-      
-      <!--SET TYPE-->
-    <label for = "lname">Select a type:</label>
-    <input list = "type" name = "type">
-    <datalist id = "type">
-      <option value = "admin">
-      <option value = "student">
-    </datalist>
-      <br />
-      
-       <?php
-            require_once('recaptchalib.php');
-            $publickey = "6LeERusSAAAAACchYVbriuqeFhcRGWkcT_LI9alg"; // you got this from the signup page
-            echo recaptcha_get_html($publickey);
-          ?>
-     
-    <input type = "submit" value = "SUBMIT HERE!" /> <!--SUBMIT BUTTON-->
-  </form>
+    <!--TO REPLACE-->
+    <div class="container">
+    <hr class="featurette-divider">
+      <!-- Example row of columns -->
+        <div class="row col-md-6" style="background-color:white">
+          <img src = "image/logo1.png" alt = "logo">
         </div>
 
-      </div><!-- /.container -->
+        <div class="row col-md-6" style="background-color:white">
+          <h2>Sign Up </h2>
+            <form role="form" action = "" name = "login" id = "login" class = "login" method = "POST">
+              <input type="hidden" name="test" value="login">
+              
+              <!--Set Name-->
+              <div class="form-group">            
+                <label for="name">Name</label>
+                <input type="text" class="form-control" name = "name" id="name" placeholder="Enter Name" value= "">
+              </div>
+
+              <!--Set Username-->
+              <div class="form-group">            
+                <label for="username">Username</label>
+                <input type="text" class="form-control" name = "username" id="username" placeholder="Enter Username" value= "">
+              </div>
+
+              <!--Set Password-->
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="text" class="form-control" name = "password" id="password" placeholder="Enter Password" value= "">
+              </div>
+
+              <!--Set Email-->
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" name = "email" id="email" placeholder="Enter Email" value= "">
+              </div>
+
+              <!--Set Type-->
+              <div class="form-group">
+                <label for = "type">Type</label>
+                <input list = "type" name = "type" class="form-control" placeholder = "Choose Type">
+                <datalist id = "type">
+                  <option value = "admin">
+                  <option value = "student">
+                </datalist>
+              </div>
+
+              <div class="checkbox">
+                <label><input type="checkbox"> Remember me</label>
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+      </div>
 
 
-      <!-- Bootstrap core JavaScript
-      ================================================== -->
-      <!-- Placed at the end of the document so the pages load faster -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-      <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-      <script src="../../dist/js/bootstrap.min.js"></script>
-      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-      <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-    </body>
-  </html>
+    
+    <div class="container">
+      <hr class="featurette-divider">
+    <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2015 Project SANDS &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
