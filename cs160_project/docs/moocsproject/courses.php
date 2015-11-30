@@ -18,7 +18,7 @@
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="offcanvas.css" rel="stylesheet">
+    <link href="courses.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -109,7 +109,7 @@
           </div><!--/row-->
         </div><!--/.col-xs-12.col-sm-9-->
 
-        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" style="margin-top:1%"><!--NOTE: might not need margin-top-->
           <div class="list-group">
             <a href="#" class="list-group-item active">Link</a>
             <a href="#" class="list-group-item">Link</a>
