@@ -54,7 +54,8 @@
           if($userMatch && $passwordMatch)
           {
             //do something here
-            echo "Access Granted.";
+            //echo "Access Granted.";
+			header('Location: accountManagement.php');
           }
           else
           {
