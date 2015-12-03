@@ -149,6 +149,15 @@
           </select>
         </div>
 
+        <div class="form-group">
+          <label for = "operator">Operator</label>
+          <select id = "type"  name = "operator" id = "operator" class="form-control" placeholder = "Choose Operator">
+            <option value = "greater-than">Greater than</option>
+            <option value = "less-than">less than</option>
+            <option value = "equal">=</option>
+          </select>
+        </div>
+
         <!--Set Value-->
         <div class="form-group">
           <label for="val">Value</label>
