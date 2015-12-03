@@ -131,11 +131,15 @@
 				<?php
 				
 					$maketemp = "CREATE TEMPORARY TABLE temp_table (
-									courseid int(4) NOT NULL,
-									PRIMARY KEY (courseid)
+									id int(5) NOT NULL AUTO_INCREMENT,
+									courseid int(5) NOT NULL,
+									PRIMARY KEY (courseid),
+									KEY (id)
 								)";
 								
 					mysqli_query($conn, $maketemp);
+					
+					//printf("Errormessage: %s\n", mysqli_error($conn));
 					
 					$insert = "INSERT IGNORE INTO temp_table (courseid)
 								SELECT id FROM course_data WHERE title LIKE '%$search%'";
@@ -157,9 +161,11 @@
 								
 					mysqli_query($conn, $insert);
 					
-					$query = "SELECT course_data.title, course_data.course_image, course_data.course_link, course_data.id
-							FROM temp_table, course_data WHERE temp_table.courseid = course_data.id";
+					$query = "SELECT course_data.title, course_data.course_image, course_data.course_link, temp_table.courseid
+							FROM temp_table, course_data WHERE temp_table.courseid = course_data.id ORDER BY temp_table.id ASC";
 					$result = mysqli_query($conn, $query);
+					
+					//printf("Errormessage: %s\n", mysqli_error($conn));
 					
 					$count = 0;
 					
@@ -168,7 +174,7 @@
 						while ($row = mysqli_fetch_array($result)) {
 							$img = $row['course_image'];
 							$link = $row['course_link'];
-							$id = $row['id'];
+							$id = $row['courseid'];
 							echo "<p class='lead'>
 									<a target='blank' href='$link'>
 									<button type='button' class='btn btn-primary-outline btn-block'>
