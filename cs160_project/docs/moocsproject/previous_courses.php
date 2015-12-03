@@ -56,7 +56,7 @@
 				<li><a href="contact.php">Contact</a></li>
 				<li><a href="course.php">Courses</a></li>
 				<li class="active"><a href="account_info.php">Account</a></li>
-				<li><a href="signup.php">Sign Up</a></li>
+				<li><a href="login.php">Sign Out</a></li>
 			  </ul>
 			</div><!--/.nav-collapse -->
 		  </div>
