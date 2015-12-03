@@ -1,7 +1,9 @@
 <?php
 	session_start();
 	
-	$loggedin = $_SESSION["loggedin"];
+	if (isset($_SESSION["loggedin"])) {
+		$loggedin = $_SESSION["loggedin"];
+	}
 	
 	if ($loggedin) {
 		$_SESSION["loggedin"] = false;

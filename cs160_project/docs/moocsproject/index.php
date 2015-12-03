@@ -1,7 +1,9 @@
 <?php
 	session_start();
-
-	$loggedin = $_SESSION["loggedin"];
+	
+	if (isset($_SESSION["loggedin"])) {
+		$loggedin = $_SESSION["loggedin"];
+	}
 ?>
 
 <!DOCTYPE html>
@@ -67,6 +69,10 @@
 						echo "<li><a href='login.php'>Login</a></li>";
 						echo "<li><a href='signup.php'>Sign Up</a></li>";
 					}
+				}
+				else {
+					echo "<li><a href='login.php'>Login</a></li>";
+					echo "<li><a href='signup.php'>Sign Up</a></li>";
 				}
 			?>
 			<li>
