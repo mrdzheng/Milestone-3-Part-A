@@ -68,7 +68,7 @@
 
     <div class="container">
       <?php 
-	  error_reporting(E_ALL ^ E_DEPRECATED); //Turn off deprecated code
+       error_reporting(E_ALL ^ E_DEPRECATED);
        //SET VARIABLES TO USE
        $categories = "";
        $val = "";
@@ -90,25 +90,29 @@
              mysql_select_db("moocs160"); //SELECT DATABASE
                     
              $data = mysql_query("SELECT * FROM course_data WHERE $categories = '$search'"); 
-             
-              //$TABLE TO HOLD THE MATCHED INFORMATION
-              $table .= "<table border cellpadding=3 id='searchtable' class='display'><thead>";
-              //PRINTS OUT FIRST ROW (HEADER)
-              $table .= "<tr>
-                    <th>Id</th>
-                    <th>Title</th>
-                    <th>Start Date</th>
-                    <th>Course Length</th>
-                    <th>Category</th>
-                    <th>Site</th>
-                    <th>Course Fee</th>
-                    <th>University</th>
-                  </tr></thead>"; /*end of header row*/
-              $table .= "<tbody>";
               
             //PRINTS OUT DATA IN THE PRODUCTS TABLE OF THE TEST DATABASE
              while($info = mysql_fetch_array($data)) 
              { 
+
+                $table .= "<div class=\"col-xs-6 col-lg-4\">";
+                $table .= "<h2>" . $info['title'] . "</h2>";
+                $table .= "<p>id: " . $info['id'] . "</p>";
+                $table .= "<p>start date: " . $info['start_date'] . "</p>";
+                $table .= "<p>course length: " . $info['course_length'] . "</p>";
+                $table .= "<p>category: " . $info['category'] . "</p>";
+                $table .= "<p>site: " . $info['site'] . "</p>";
+                $table .= "<p>course fee: " . $info['course_fee'] . "</p>";
+                $table .= "<p>university: " . $info['university'] . "</p>";
+                $table .= "</div>";
+
+                /*
+                <div class="col-xs-6 col-lg-4">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div><!--/.col-xs-6.col-lg-4
+
                $table .= "<tr>"; //CREATE NEW ROW
                $table .= "<td>". $info['id'] . "</td> "; 
                $table .= "<td>". $info['title'] . " </td>";
@@ -118,9 +122,9 @@
                $table .= "<td>". $info['site'] . " </td>";
                $table .= "<td>". $info['course_fee'] . " </td>";
                $table .= "<td>". $info['university'] . "</td>"; 
-               $table .= "</tr>"; //END ROW
+               $table .= "</tr>"; //END ROW*/
              } //END OF WHILE LOOP
-              $table.= "</tbody></table>"; //END OF TABLE
+              //$table.= "</tbody></table>"; //END OF TABLE
               
           }//END OF IF STATEMENT (NESTED)
         }//END OF IF STATEMENT
@@ -154,7 +158,7 @@
 
         
           <button type="submit" class="btn btn-default">Submit</button>
-          <?php echo($table) ?>
+          
         </form>
 
         <hr class="featurette-divider">
@@ -170,36 +174,7 @@
           </p>
 
           <div class="row">
-            <div class="col-xs-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div><!--/.col-xs-6.col-lg-4-->
-            <div class="col-xs-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div><!--/.col-xs-6.col-lg-4-->
-            <div class="col-xs-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div><!--/.col-xs-6.col-lg-4-->
-            <div class="col-xs-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div><!--/.col-xs-6.col-lg-4-->
-            <div class="col-xs-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div><!--/.col-xs-6.col-lg-4-->
-            <div class="col-xs-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div><!--/.col-xs-6.col-lg-4-->
+            <?php echo($table) ?>
           </div><!--/row-->
         </div><!--/.col-xs-12.col-sm-9-->
 
@@ -238,4 +213,4 @@
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
     <script src="offcanvas.js"></script>
   </body>
-</html> 
+</html>
