@@ -57,13 +57,16 @@
             <li><a href="contact.php">Contact</a></li>
             <li><a href="courses.php">Courses</a></li>
             <?php
-				if ($loggedin) {
-					echo "<li><a href='account_info.php'>Account</a></li>";
-					echo "<li><a href='login.php'>Sign Out</a></li>";
-				}
-				else {
-					echo "<li><a href='login.php'>Login</a></li>";
-					echo "<li><a href='signup.php'>Sign Up</a></li>";
+				if (isset($loggedin)) {
+			
+					if ($loggedin) {
+						echo "<li><a href='account_info.php'>Account</a></li>";
+						echo "<li><a href='login.php'>Sign Out</a></li>";
+					}
+					else {
+						echo "<li><a href='login.php'>Login</a></li>";
+						echo "<li><a href='signup.php'>Sign Up</a></li>";
+					}
 				}
 			?>
           </ul>
@@ -88,17 +91,20 @@
       <div class="row">
         <div class="col-md-4">
           <h2>About</h2>
-          <p>Group 1 is dedicated to bringing courses online. Group 1 was founded in CS160, the software engineering class at San Jose State University. Group 1’s members are: Alvin Ko, Dave Zheng, Steve Lee, Nick Saric. </p>
+          <p>Group 1 is dedicated to bringing courses online. Group 1 was founded in CS160, the software engineering class at San Jose State University. Group 1’s members are: 
+Alvin Ko, Dave Zheng, Steve Lee, Nick Saric. </p>
           <p><a class="btn btn-default" href="about.php" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-md-4">
           <h2>Courses</h2>
-          <p>The MOOCS160 project presented by Group 1 cross site scrapes course data and details from Udacity, FutureLearn, Canvas, Iversity, Coursera, Open2study, Edx, and Novo Ed. This is achieved using Jsoup and calls to an API.</p>
+          <p>The MOOCS160 project presented by Group 1 cross site scrapes course data and details from Udacity, FutureLearn, Canvas, Iversity, Coursera, Open2study, Edx, and Novo 
+Ed. This is achieved using Jsoup and calls to an API.</p>
           <p><a class="btn btn-default" href="courses.php" role="button">View details &raquo;</a></p>
        </div>
         <div class="col-md-4">
           <h2>Login</h2>
-          <p>We at Group 1 hope that you appreciate the dedication we put into this site. We are available for support 24/7 (not really). Login here and begin your journey. The future of education starts here. </p>
+          <p>We at Group 1 hope that you appreciate the dedication we put into this site. We are available for support 24/7 (not really). Login here and begin your journey. The 
+future of education starts here. </p>
           <p><a class="btn btn-default" href="login.php" role="button">View details &raquo;</a></p>
         </div>
       </div>
