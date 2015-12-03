@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -50,12 +53,12 @@
               $passwordMatch = true;
             }
           }
-
           if($userMatch && $passwordMatch)
           {
             //do something here
             //echo "Access Granted.";
-			header('Location: accountManagement.php');
+			$_SESSION["username"] = $_POST["username"];
+			header("Location: account_info.php");
           }
           else
           {
