@@ -99,7 +99,7 @@
 								$img = $row['course_image'];
 								$link = $row['course_link'];
 								echo "<p class='lead'>
-										<a href='$link'>
+										<a target='blank' href='$link'>
 										<button type='button' class='btn btn-primary-outline btn-block'>
 											" . $row['title'] . 
 											"<img class='featurette-image img-responsive center-block' src='$img' style='width:75px;height:75px'>
@@ -151,7 +151,7 @@
 							$img = $row['course_image'];
 							$link = $row['course_link'];
 								echo "<p class='lead'>
-										<a href='$link'>
+										<a target='blank' href='$link'>
 										<button type='button' class='btn btn-primary-outline btn-block'>
 											" . $row['title'] . 
 											"<img class='featurette-image img-responsive center-block' src='$img' style='width:75px;height:75px'>
@@ -159,6 +159,7 @@
 										</a>
 										</p>";
 						}
+						
 						
 						mysqli_close($conn);
 					?>
