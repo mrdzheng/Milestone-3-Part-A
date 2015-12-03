@@ -142,8 +142,10 @@
 										GROUP BY (course_data.id) ORDER BY RAND() LIMIT 3";
 						}
 						
-						//$query = "SELECT title, course_image FROM course_data WHERE title LIKE '%Beginner%' OR title LIKE '%Intro%' LIMIT 3";
+						
 						$result = mysqli_query($conn, $query);
+						
+						//printf("Errormessage: %s\n", mysqli_error($conn));
 						
 						while ($row = mysqli_fetch_array($result)) {
 							$img = $row['course_image'];
