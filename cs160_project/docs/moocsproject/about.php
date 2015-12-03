@@ -110,7 +110,7 @@
       <div class="row featurette">
         <div class="col-md-7">
           <h2 class="featurette-heading">Dave Zheng <span class="text-muted">Chief Executive Officer</span></h2>
-          <p class="lead">Dave is a senior studying Electrical Engineering and Computer Science (EECS) at SJSU. In his spare time he likes to complain about his senior project and CS153 project. He is the founder of Spartan Dragon Boat.</p>
+          <p class="lead">Dave is a senior studying Electrical Engineering and Computer Science (EECS) at SJSU. He spend a lot of time in the IEEE room. He is the founder of Spartan Dragon Boat.</p>
         </div>
         <div class="col-md-5">
           <img class="featurette-image img-responsive center-block" src="image/dave_profile.png" alt="Dave Zheng" >
