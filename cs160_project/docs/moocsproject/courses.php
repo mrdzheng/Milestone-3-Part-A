@@ -137,17 +137,16 @@
         <!--Set Type-->
         <div class="form-group">
           <label for = "categories">Category</label>
-          <input list = "type" name = "categories" id = "categories" class="form-control" placeholder = "Choose Type">
-          <datalist id = "type">
-            <option value = "id">
-            <option value = "title">
-            <option value = "start_date">
-            <option value = "course_length">
-            <option value = "category">
-            <option value = "site">
-            <option value = "course_fee">
-            <option value = "university">  
-          </datalist>
+          <select id = "type"  name = "categories" id = "categories" class="form-control" placeholder = "Choose Type">
+            <option value = "id">id</option>
+            <option value = "title">title</option>
+            <option value = "start_date">start date</option>
+            <option value = "course_length">course length</option>
+            <option value = "category">category</option>
+            <option value = "site">site</option>
+            <option value = "course_fee">course fee </option>
+            <option value = "university"> university</option>
+          </select>
         </div>
 
         <!--Set Value-->
