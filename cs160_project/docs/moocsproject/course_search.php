@@ -105,15 +105,42 @@
 	
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-6">
+			<div class="col-md-8">
 				<h1>Courses</h1>
 				<?php
+				
+					$maketemp = "CREATE TEMPORARY TABLE temp_table (
+									courseid int(4) NOT NULL,
+									PRIMARY KEY (courseid)
+								)";
+								
+					mysqli_query($conn, $maketemp);
+					
+					$insert = "INSERT IGNORE INTO temp_table (courseid)
+								SELECT id FROM course_data WHERE title LIKE '%$search%'";
+					
+					mysqli_query($conn, $insert);
+					
+					$insert = "INSERT IGNORE INTO temp_table (courseid)
+								SELECT id FROM course_data WHERE short_desc LIKE '%$search%'";
+								
+					mysqli_query($conn, $insert);
+					
+					$insert = "INSERT IGNORE INTO temp_table (courseid)
+								SELECT id FROM course_data WHERE long_desc LIKE '%$search%'";
+								
+					mysqli_query($conn, $insert);
+					
+					$insert = "INSERT IGNORE INTO temp_table (courseid)
+								SELECT course_id FROM coursedetails WHERE profname LIKE '%$search%'";
+								
+					mysqli_query($conn, $insert);
 					
 					$query = "SELECT course_data.title, course_data.course_image, course_data.course_link 
-							FROM course_data, coursedetails WHERE course_data.title LIKE '%$search%' 
-							OR course_data.short_desc LIKE '%$search%' OR course_data.category LIKE '%$search%'
-							OR course_data.long_desc LIKE '%$search%' OR coursedetails.profname LIKE '%$search%' GROUP BY course_data.id";
+							FROM temp_table, course_data WHERE temp_table.courseid = course_data.id";
 					$result = mysqli_query($conn, $query);
+					
+					$count = 0;
 					
 					if (mysqli_num_rows($result) > 0) {
 						
@@ -128,11 +155,14 @@
 									</button>
 									</a>
 									</p>";
+							$count = $count + 1;
 						}
 					}
 					else {
 						echo "<p class='lead'>No courses taken</p>";
 					}
+					
+					echo "<h2>$count search results</h2>";
 					
 					mysqli_close($conn);
 				?>
