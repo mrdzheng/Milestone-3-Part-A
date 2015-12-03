@@ -56,34 +56,20 @@
 				<li><a href="contact.php">Contact</a></li>
 				<li><a href="course.php">Courses</a></li>
 				<li class="active"><a href="account_info.php">Account</a></li>
-				<li><a href="login.php">Sign Out</a></li>
+				<li><a href="signup.php">Sign Up</a></li>
 			  </ul>
 			</div><!--/.nav-collapse -->
 		  </div>
 		</nav>
 		
 		<div class="container">
-			<div class="jumbotron">
-				<div class="trans">
-					<h1>Account</h1>
-					<!-- Display username -->
-					<?php
-						echo "<p>" .$_SESSION['username'] . "</p>";
-					?>
-					
-				</div>
-			</div>
-		</div>
-		
-		<div class="container">
 			<div class="row">
 				<div class="col-xs-6">
-					<h2>Previous Courses</h2>
-					<!-- Add previous courses user has taken here -->
+					<h1>All Previous Courses</h1>
 					<?php
-						// Get last 3 courses taken
+						//echo "<p>" .$_SESSION['username'] . "</p>";
 						$query = "SELECT course_data.title, course_data.course_image, course_data.course_link FROM course_data, courses_taken WHERE 
-									courses_taken.course_id = course_data.id AND courses_taken.username = '$user' ORDER BY courses_taken.id DESC LIMIT 3";
+									courses_taken.course_id = course_data.id AND courses_taken.username = '$user' ORDER BY courses_taken.id DESC";
 						$result = mysqli_query($conn, $query);
 						
 						if (mysqli_num_rows($result) > 0) {
@@ -105,59 +91,12 @@
 							echo "<p class='lead'>No courses taken</p>";
 						}
 						
-						
-					?>
-					<a href="previous_courses.php"><button type='button' class='btn btn-primary'>View All Courses Taken >></button></a>
-				</div>
-				<div class="col-xs-6">
-					<h2>Recommended Courses</h2>
-					<!-- Add follow up or similar courses to what user has taken here -->
-					<?php
-						
-						if (mysqli_num_rows($result) == 0) {
-							$query = "SELECT title, course_image FROM course_data WHERE title LIKE '%Beginner%' OR title LIKE '%Intro%' ORDER BY RAND() LIMIT 3";
-						}
-						else {
-							$maketemp = "CREATE TEMPORARY TABLE `temp_table` (
-								`category` varchar(100) UNIQUE NOT NULL
-							)";
-							
-							mysqli_query($conn, $maketemp);
-							
-							$insertTemp = "INSERT IGNORE INTO temp_table (`category`) SELECT course_data.category
-									FROM course_data, courses_taken WHERE 
-									courses_taken.course_id = course_data.id AND courses_taken.username = '$user'";
-									
-							mysqli_query($conn, $insertTemp);
-							
-							$query = "SELECT course_data.title, course_data.course_image, course_data.course_link FROM temp_table, course_data, courses_taken
-										WHERE course_data.category LIKE temp_table.category AND course_data.id != courses_taken.course_id
-										GROUP BY (course_data.id) ORDER BY RAND() LIMIT 3";
-						}
-						
-						//$query = "SELECT title, course_image FROM course_data WHERE title LIKE '%Beginner%' OR title LIKE '%Intro%' LIMIT 3";
-						$result = mysqli_query($conn, $query);
-						
-						while ($row = mysqli_fetch_array($result)) {
-							$img = $row['course_image'];
-							$link = $row['course_link'];
-								echo "<p class='lead'>
-										<a href='$link'>
-										<button type='button' class='btn btn-primary-outline btn-block'>
-											" . $row['title'] . 
-											"<img class='featurette-image img-responsive center-block' src='$img' style='width:75px;height:75px'>
-										</button>
-										</a>
-										</p>";
-						}
-						
 						mysqli_close($conn);
 					?>
-					
 				</div>
-				
 			</div>
 		</div>
+		
 	
 	</body>
   

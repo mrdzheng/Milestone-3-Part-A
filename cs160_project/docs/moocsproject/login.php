@@ -1,5 +1,11 @@
 <?php
 	session_start();
+	
+	$loggedin = $_SESSION["loggedin"];
+	
+	if ($loggedin) {
+		$_SESSION["loggedin"] = false;
+	}
 ?>
 
 <!DOCTYPE html>
@@ -58,6 +64,7 @@
             //do something here
             //echo "Access Granted.";
 			$_SESSION["username"] = $_POST["username"];
+			$_SESSION["loggedin"] = true;
 			header("Location: account_info.php");
           }
           else

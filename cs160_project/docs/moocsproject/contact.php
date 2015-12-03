@@ -1,3 +1,9 @@
+<?php
+	session_start();
+	
+	$loggedin = $_SESSION["loggedin"];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -50,8 +56,16 @@
             <li><a href="about.php">About</a></li>
             <li class="active"><a href="contact.php">Contact</a></li>
             <li><a href="courses.php">Courses</a></li>
-            <li><a href="login.php">Login</a></li>
-            <li><a href="signup.php">Sign Up</a></li>
+            <?php
+				if ($loggedin) {
+					echo "<li><a href='account_info.php'>Account</a></li>";
+					echo "<li><a href='login.php'>Sign Out</a></li>";
+				}
+				else {
+					echo "<li><a href='login.php'>Login</a></li>";
+					echo "<li><a href='signup.php'>Sign Up</a></li>";
+				}
+			?>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
