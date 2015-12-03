@@ -11,7 +11,26 @@
 	}
 	
 	session_start();
-	$user = $_SESSION["username"];
+	if (isset($_SESSION["username"])) {
+		$user = $_SESSION["username"];
+	}
+	
+	if (isset($_POST['add'])) {
+		$id = $_POST['add'];
+		
+		$query = "SELECT * FROM courses_taken WHERE course_id = '$id' AND username = '$user'";
+		
+		$result = mysqli_query($conn, $query);
+		
+		if (mysqli_num_rows($result) == 0) {
+			$insert = "INSERT INTO courses_taken (username, course_id) VALUES ('$user', '$id')";
+			
+			mysqli_query($conn, $insert);
+		}
+		
+		unset($_POST['add']);
+		unset($id);
+	}
 ?>
 
 <html lang="en">
@@ -125,21 +144,27 @@
 							$query = "SELECT title, course_image, course_link FROM course_data WHERE title LIKE '%Beginner%' OR title LIKE '%Intro%' ORDER BY RAND() LIMIT 3";
 						}
 						else {
-							$maketemp = "CREATE TEMPORARY TABLE `temp_table` (
-								`category` varchar(100) UNIQUE NOT NULL
+							$maketemp = "CREATE TEMPORARY TABLE temp_table (
+								category varchar(100) NOT NULL,
+								PRIMARY KEY(category)
 							)";
 							
 							mysqli_query($conn, $maketemp);
 							
-							$insertTemp = "INSERT IGNORE INTO temp_table (`category`) SELECT course_data.category
+							//printf("Errormessage: %s\n", mysqli_error($conn));
+							
+							$insertTemp = "INSERT IGNORE INTO temp_table (category) SELECT course_data.category
 									FROM course_data, courses_taken WHERE 
 									courses_taken.course_id = course_data.id AND courses_taken.username = '$user'";
 									
 							mysqli_query($conn, $insertTemp);
 							
-							$query = "SELECT course_data.title, course_data.course_image, course_data.course_link FROM temp_table, course_data, courses_taken
-										WHERE course_data.category LIKE temp_table.category AND course_data.id != courses_taken.course_id
+							//printf("Errormessage: %s\n", mysqli_error($conn));
+							
+							$query = "SELECT course_data.title, course_data.course_image, course_data.course_link, course_data.id FROM temp_table, course_data, courses_taken
+										WHERE course_data.category LIKE temp_table.category AND course_data.id <> courses_taken.course_id
 										GROUP BY (course_data.id) ORDER BY RAND() LIMIT 3";
+							
 						}
 						
 						
@@ -148,16 +173,20 @@
 						//printf("Errormessage: %s\n", mysqli_error($conn));
 						
 						while ($row = mysqli_fetch_array($result)) {
+							$id = $row['id'];
 							$img = $row['course_image'];
 							$link = $row['course_link'];
-								echo "<p class='lead'>
-										<a target='blank' href='$link'>
-										<button type='button' class='btn btn-primary-outline btn-block'>
-											" . $row['title'] . 
-											"<img class='featurette-image img-responsive center-block' src='$img' style='width:75px;height:75px'>
-										</button>
-										</a>
-										</p>";
+							echo "<p class='lead'>
+									<a target='blank' href='$link'>
+									<button type='button' class='btn btn-primary-outline btn-block'>
+										" . $row['title'] . 
+										"<img class='featurette-image img-responsive center-block' src='$img' style='width:75px;height:75px'>
+									</button>
+									</a>
+									</p>";
+							echo "<form name='form2' method='post' action='account_info.php'>
+										Add course: <input class='btn btn-primary' type='submit' name='add' value='$id'>
+									</form>";
 						}
 						
 						

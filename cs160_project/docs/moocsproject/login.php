@@ -6,6 +6,7 @@
 		
 		if ($loggedin) {
 			$_SESSION["loggedin"] = false;
+			unset($_SESSION['username']);
 		}
 	}
 	

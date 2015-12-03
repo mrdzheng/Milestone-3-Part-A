@@ -21,6 +21,27 @@
 	else {
 		$search = $_POST['search'];
 	}
+	
+	if (isset($_SESSION["username"])) {
+		$user = $_SESSION["username"];
+		
+		if (isset($_POST['add'])) {
+			$id = $_POST['add'];
+			
+			$query = "SELECT * FROM courses_taken WHERE course_id = '$id' AND username = '$user'";
+			
+			$result = mysqli_query($conn, $query);
+			
+			if (mysqli_num_rows($result) == 0) {
+				$insert = "INSERT INTO courses_taken (username, course_id) VALUES ('$user', '$id')";
+				
+				mysqli_query($conn, $insert);
+			}
+			
+			unset($_POST['add']);
+			unset($id);
+		}
+	}
 ?>
 
 <!DOCTYPE html>
@@ -136,7 +157,7 @@
 								
 					mysqli_query($conn, $insert);
 					
-					$query = "SELECT course_data.title, course_data.course_image, course_data.course_link 
+					$query = "SELECT course_data.title, course_data.course_image, course_data.course_link, course_data.id
 							FROM temp_table, course_data WHERE temp_table.courseid = course_data.id";
 					$result = mysqli_query($conn, $query);
 					
@@ -147,6 +168,7 @@
 						while ($row = mysqli_fetch_array($result)) {
 							$img = $row['course_image'];
 							$link = $row['course_link'];
+							$id = $row['id'];
 							echo "<p class='lead'>
 									<a target='blank' href='$link'>
 									<button type='button' class='btn btn-primary-outline btn-block'>
@@ -155,6 +177,9 @@
 									</button>
 									</a>
 									</p>";
+							echo "<form name='form2' method='post' action=''>
+										Add course: <input class='btn btn-primary' type='submit' name='add' value='$id'>
+									</form>";
 							$count = $count + 1;
 						}
 					}
