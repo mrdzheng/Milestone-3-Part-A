@@ -3,11 +3,13 @@
 	
 	if (isset($_SESSION["loggedin"])) {
 		$loggedin = $_SESSION["loggedin"];
+		
+		if ($loggedin) {
+			$_SESSION["loggedin"] = false;
+		}
 	}
 	
-	if ($loggedin) {
-		$_SESSION["loggedin"] = false;
-	}
+	
 ?>
 
 <!DOCTYPE html>

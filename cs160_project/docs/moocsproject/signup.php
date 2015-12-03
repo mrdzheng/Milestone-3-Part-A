@@ -137,6 +137,12 @@
             <li><a href="courses.php">Courses</a></li>
             <li><a href="login.php">Login</a></li>
             <li class="active"><a href="signup.php">Sign Up</a></li>
+			<li>
+				<form name="form1" method="post" action="course_search.php">
+					<input name="search" type="text" size="40" maxlength="50"/>
+					<input type="submit" name="Submit" value="Search"/>
+				</form>
+			</li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
