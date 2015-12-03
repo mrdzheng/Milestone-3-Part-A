@@ -42,13 +42,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">Project SAND</a>
+          <a class="navbar-brand" href="index.php">Project SAND</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.php">About</a></li>
+            <li><a href="contact.php">Contact</a></li>
             <li><a href="courses.php">Courses</a></li>
             <li><a href="login.php">Login</a></li>
             <li><a href="signup.php">Sign Up</a></li>
@@ -64,7 +64,7 @@
         <div class= "trans">
         <h1>Welcome to</h1>
         <p>Group 1 MOOCS Project</p>
-        <p><a class="btn btn-primary btn-lg" href="about.html" role="button">Learn more &raquo;</a></p>
+        <p><a class="btn btn-primary btn-lg" href="about.php" role="button">Learn more &raquo;</a></p>
       </div>
       </div>
     </div>
@@ -75,7 +75,7 @@
         <div class="col-md-4">
           <h2>About</h2>
           <p>Group 1 is dedicated to bringing courses online. Group 1 was founded in CS160, the software engineering class at San Jose State University. Group 1’s members are: Alvin Ko, Dave Zheng, Steve Lee, Nick Saric. </p>
-          <p><a class="btn btn-default" href="about.html" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-default" href="about.php" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-md-4">
           <h2>Courses</h2>

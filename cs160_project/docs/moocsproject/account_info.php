@@ -47,13 +47,13 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			  </button>
-			  <a class="navbar-brand" href="index.html">Project SAND</a>
+			  <a class="navbar-brand" href="index.php">Project SAND</a>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 			  <ul class="nav navbar-nav">
-				<li ><a href="index.html">Home</a></li>
-				<li><a href="about.html">About</a></li>
-				<li><a href="contact.html">Contact</a></li>
+				<li ><a href="index.php">Home</a></li>
+				<li><a href="about.php">About</a></li>
+				<li><a href="contact.php">Contact</a></li>
 				<li><a href="course.php">Courses</a></li>
 				<li class="active"><a href="account_info.php">Account</a></li>
 				<li><a href="signup.php">Sign Up</a></li>
@@ -82,7 +82,7 @@
 					<!-- Add previous courses user has taken here -->
 					<?php
 						// Get last 3 courses taken
-						$query = "SELECT course_data.title, course_data.course_image FROM course_data, courses_taken WHERE 
+						$query = "SELECT course_data.title, course_data.course_image, course_data.course_link FROM course_data, courses_taken WHERE 
 									courses_taken.course_id = course_data.id AND courses_taken.username = '$user' ORDER BY courses_taken.id DESC LIMIT 3";
 						$result = mysqli_query($conn, $query);
 						
@@ -90,12 +90,14 @@
 							
 							while ($row = mysqli_fetch_array($result)) {
 								$img = $row['course_image'];
+								$link = $row['course_link'];
 								echo "<p class='lead'>
+										<a href='$link'>
 										<button type='button' class='btn btn-primary-outline btn-block'>
-											<a href='#'>" . $row['title'] . 
+											" . $row['title'] . 
 											"<img class='featurette-image img-responsive center-block' src='$img' style='width:75px;height:75px'>
-											</a>
 										</button>
+										</a>
 										</p>";
 							}
 						}
@@ -105,6 +107,7 @@
 						
 						
 					?>
+					<a href="previous_courses.php"><button type='button' class='btn btn-primary'>View All Courses Taken >></button></a>
 				</div>
 				<div class="col-xs-6">
 					<h2>Recommended Courses</h2>
@@ -112,7 +115,7 @@
 					<?php
 						
 						if (mysqli_num_rows($result) == 0) {
-							$query = "SELECT title, course_image FROM course_data WHERE title LIKE '%Beginner%' OR title LIKE '%Intro%' LIMIT 3";
+							$query = "SELECT title, course_image FROM course_data WHERE title LIKE '%Beginner%' OR title LIKE '%Intro%' ORDER BY RAND() LIMIT 3";
 						}
 						else {
 							$maketemp = "CREATE TEMPORARY TABLE `temp_table` (
@@ -127,9 +130,9 @@
 									
 							mysqli_query($conn, $insertTemp);
 							
-							$query = "SELECT course_data.title, course_data.course_image FROM temp_table, course_data, courses_taken
-										WHERE course_data.category = temp_table.category AND course_data.id != courses_taken.course_id
-										GROUP BY (course_data.id) LIMIT 3";
+							$query = "SELECT course_data.title, course_data.course_image, course_data.course_link FROM temp_table, course_data, courses_taken
+										WHERE course_data.category LIKE temp_table.category AND course_data.id != courses_taken.course_id
+										GROUP BY (course_data.id) ORDER BY RAND() LIMIT 3";
 						}
 						
 						//$query = "SELECT title, course_image FROM course_data WHERE title LIKE '%Beginner%' OR title LIKE '%Intro%' LIMIT 3";
@@ -137,13 +140,15 @@
 						
 						while ($row = mysqli_fetch_array($result)) {
 							$img = $row['course_image'];
-							echo "<p class='lead'>
-									<button type='button' class='btn btn-primary-outline btn-block'>
-										<a href='#'>" . $row['title'] . 
-										"<img class='featurette-image img-responsive center-block' src='$img' style='width:75px;height:75px'>
+							$link = $row['course_link'];
+								echo "<p class='lead'>
+										<a href='$link'>
+										<button type='button' class='btn btn-primary-outline btn-block'>
+											" . $row['title'] . 
+											"<img class='featurette-image img-responsive center-block' src='$img' style='width:75px;height:75px'>
+										</button>
 										</a>
-									</button>
-									</p>";
+										</p>";
 						}
 						
 						mysqli_close($conn);

@@ -103,7 +103,7 @@
         //END PREPARED STATEMENT PORTION OF THIS PHP FILE
         
         //GO TO ANOTHER PHP SCRIPT
-        header('Location: index.html');
+        header('Location: index.php');
       }
     ?>
 
@@ -125,13 +125,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">Project SAND</a>
+          <a class="navbar-brand" href="index.php">Project SAND</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="about.php">About</a></li>
+            <li><a href="contact.php">Contact</a></li>
             <li><a href="courses.php">Courses</a></li>
             <li><a href="login.php">Login</a></li>
             <li class="active"><a href="signup.php">Sign Up</a></li>
@@ -147,7 +147,7 @@
         <div class= "trans">
         <h1>Welcome to</h1>
         <p>Group 1 MOOCS Project</p>
-        <p><a class="btn btn-primary btn-lg" href="about.html" role="button">Learn more &raquo;</a></p>
+        <p><a class="btn btn-primary btn-lg" href="about.php" role="button">Learn more &raquo;</a></p>
       </div>
       </div>
     </div>

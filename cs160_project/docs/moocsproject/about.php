@@ -1,3 +1,8 @@
+<?php
+	session_start();
+	$user = $_SESSION["username"];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -42,15 +47,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">Project SAND</a>
+          <a class="navbar-brand" href="index.php">Project SAND</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="index.html">Home</a></li>
-            <li class ="active"><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li class ="active"><a href="about.php">About</a></li>
+            <li><a href="contact.php">Contact</a></li>
             <li><a href="courses.php">Courses</a></li>
-            <li><a href="login.php">Login</a></li>
+			<li><a href="login.php">Login</a></li>
             <li><a href="signup.php">Sign Up</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -64,7 +69,7 @@
         <div class= "trans">
         <h1>About Us</h1>
         <p>Group 1 MOOCS Project</p>
-        <p><a class="btn btn-primary btn-lg" href="index.html" role="button">Home &raquo;</a></p>
+        <p><a class="btn btn-primary btn-lg" href="index.php" role="button">Home &raquo;</a></p>
       </div>
       </div>
     </div>
