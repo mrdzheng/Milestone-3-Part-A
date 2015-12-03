@@ -1,3 +1,9 @@
+<?php
+	session_start();
+
+	$loggedin = $_SESSION["loggedin"];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -41,16 +47,27 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">Project SAND</a>
+          <a class="navbar-brand" href="index.php">Project SAND</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="courses.php">Courses</a></li>
-            <li><a href="login.php">Login</a></li>
-            <li><a href="signup.php">Sign Up</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="about.php">About</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li class="active"><a href="courses.php">Courses</a></li>
+            <?php
+				if (isset($loggedin)) {
+			
+					if ($loggedin) {
+						echo "<li><a href='account_info.php'>Account</a></li>";
+						echo "<li><a href='login.php'>Sign Out</a></li>";
+					}
+					else {
+						echo "<li><a href='login.php'>Login</a></li>";
+						echo "<li><a href='signup.php'>Sign Up</a></li>";
+					}
+				}
+			?>
           </ul>
         </div><!--/.nav-collapse -->
       </div><!-- /.container -->

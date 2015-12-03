@@ -54,7 +54,7 @@
 				<li ><a href="index.php">Home</a></li>
 				<li><a href="about.php">About</a></li>
 				<li><a href="contact.php">Contact</a></li>
-				<li><a href="course.php">Courses</a></li>
+				<li><a href="courses.php">Courses</a></li>
 				<li class="active"><a href="account_info.php">Account</a></li>
 				<li><a href="login.php">Sign Out</a></li>
 			  </ul>
