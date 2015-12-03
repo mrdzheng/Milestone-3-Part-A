@@ -115,7 +115,7 @@
 					<?php
 						
 						if (mysqli_num_rows($result) == 0) {
-							$query = "SELECT title, course_image FROM course_data WHERE title LIKE '%Beginner%' OR title LIKE '%Intro%' ORDER BY RAND() LIMIT 3";
+							$query = "SELECT title, course_image, course_link FROM course_data WHERE title LIKE '%Beginner%' OR title LIKE '%Intro%' ORDER BY RAND() LIMIT 3";
 						}
 						else {
 							$maketemp = "CREATE TEMPORARY TABLE `temp_table` (
