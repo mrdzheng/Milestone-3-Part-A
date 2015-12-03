@@ -90,7 +90,7 @@
         <div class= "trans">
         <h1>Welcome to</h1>
         <p>Group 1 MOOCS Project</p>
-        <p><a class="btn btn-primary btn-lg" href="about.html" role="button">Learn more &raquo;</a></p>
+        <p><a class="btn btn-primary btn-lg" href="about.php" role="button">Learn more &raquo;</a></p>
       </div>
       </div>
     </div>
