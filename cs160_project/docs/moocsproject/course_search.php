@@ -14,6 +14,9 @@
 	if (isset($_SESSION["loggedin"])) {
 		$loggedin = $_SESSION["loggedin"];
 	}
+	else {
+		$loggedin = false;
+	}
 	
 	if (!isset($_POST['search'])) {
 		header("Location: index.php");
@@ -183,9 +186,11 @@
 									</button>
 									</a>
 									</p>";
-							echo "<form name='form2' method='post' action=''>
-										Add course: <input class='btn btn-primary' type='submit' name='add' value='$id'>
-									</form>";
+							if ($loggedin) {
+								echo "<form name='form2' method='post' action='account_info.php'>
+											Add course: <input class='btn btn-primary' type='submit' name='add' value='$id'>
+										</form>";
+							}
 							$count = $count + 1;
 						}
 					}
