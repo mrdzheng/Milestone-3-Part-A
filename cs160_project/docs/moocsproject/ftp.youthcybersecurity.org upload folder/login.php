@@ -70,7 +70,8 @@
             //echo "Access Granted.";
 			$_SESSION["username"] = $_POST["username"];
 			$_SESSION["loggedin"] = true;
-			header("Location: ./account_info.php");
+			//header("Location: ./account_info.php");
+			echo "<script>window.location = './account_info.php';</script>";
           }
           else
           {
