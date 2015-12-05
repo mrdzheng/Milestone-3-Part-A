@@ -1,3 +1,5 @@
+USE `youthcyb_cs160s1g1`;
+
 CREATE TABLE IF NOT EXISTS `courses_taken` (
 	`id` int NOT NULL AUTO_INCREMENT,
 	`username` VARCHAR(255) NOT NULL,

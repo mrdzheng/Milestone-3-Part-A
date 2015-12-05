@@ -20,7 +20,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="This is the home page for the CS160 Group 1 MOOCS Project">
+    <meta name="description" content="This is the login page for Project SAND">
     <meta name="author" content="Alvin Ko">
     <link rel="icon" href="../../favicon.ico">
 
@@ -133,7 +133,7 @@
       <div class="jumbotron">
         <div class= "trans">
         <h1>Welcome to</h1>
-        <p>Group 1 MOOCS Project</p>
+        <p>Project SAND</p>
         <p><a class="btn btn-primary btn-lg" href="about.php" role="button">Learn more &raquo;</a></p>
       </div>
       </div>
@@ -178,7 +178,7 @@
       <hr class="featurette-divider">
     <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2015 Project SANDS &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2015 Project SAND &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
     </div>
 

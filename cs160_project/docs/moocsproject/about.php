@@ -93,7 +93,7 @@
       <div class="jumbotron">
         <div class= "trans">
         <h1>About Us</h1>
-        <p>Group 1 MOOCS Project</p>
+        <p>Project SAND</p>
         <p><a class="btn btn-primary btn-lg" href="index.php" role="button">Home &raquo;</a></p>
       </div>
       </div>
@@ -163,7 +163,7 @@
 
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2015 Project SANDS &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2015 Project SAND &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
     </div>
 

@@ -89,7 +89,7 @@
       <div class="jumbotron">
         <div class= "trans">
         <h1>Welcome to</h1>
-        <p>Group 1 MOOCS Project</p>
+        <p>Project SAND</p>
         <p><a class="btn btn-primary btn-lg" href="about.php" role="button">Learn more &raquo;</a></p>
       </div>
       </div>

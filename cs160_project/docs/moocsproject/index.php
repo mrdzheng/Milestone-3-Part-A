@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="This is the home page for the CS160 Group 1 MOOCS Project">
+    <meta name="description" content="This is the home page for Project SAND">
     <meta name="author" content="Alvin Ko">
     <link rel="icon" href="../../favicon.ico">
 
@@ -92,7 +92,7 @@
       <div class="jumbotron">
         <div class= "trans">
         <h1>Welcome to</h1>
-        <p>Group 1 MOOCS Project</p>
+        <p>Project SAND</p>
         <p><a class="btn btn-primary btn-lg" href="about.php" role="button">Learn more &raquo;</a></p>
       </div>
       </div>
@@ -103,19 +103,19 @@
       <div class="row">
         <div class="col-md-4">
           <h2>About</h2>
-          <p>Group 1 is dedicated to bringing courses online. Group 1 was founded in CS160, the software engineering class at San Jose State University. Group 1’s members are: 
+          <p>Project SAND is dedicated to bringing courses online. Project SAND was founded in CS160, the software engineering class at San Jose State University. Project Sand's members are: 
 Alvin Ko, Dave Zheng, Steve Lee, Nick Saric. </p>
           <p><a class="btn btn-default" href="about.php" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-md-4">
           <h2>Courses</h2>
-          <p>The MOOCS160 project presented by Group 1 cross site scrapes course data and details from Udacity, FutureLearn, Canvas, Iversity, Coursera, Open2study, Edx, and Novo 
+          <p>The website presented by Project SAND cross site scrapes course data and details from Udacity, FutureLearn, Canvas, Iversity, Coursera, Open2study, Edx, and Novo 
 Ed. This is achieved using Jsoup and calls to an API.</p>
           <p><a class="btn btn-default" href="courses.php" role="button">View details &raquo;</a></p>
        </div>
         <div class="col-md-4">
           <h2>Login</h2>
-          <p>We at Group 1 hope that you appreciate the dedication we put into this site. We are available for support 24/7 (not really). Login here and begin your journey. The 
+          <p>We at Project SAND hope that you appreciate the dedication we put into this site. We are available for support 24/7 (not really). Login here and begin your journey. The 
 future of education starts here. </p>
           <p><a class="btn btn-default" href="login.php" role="button">View details &raquo;</a></p>
         </div>
@@ -125,7 +125,7 @@ future of education starts here. </p>
 
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2015 Project SANDS &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2015 Project SAND &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
     </div> <!-- /container -->
 
