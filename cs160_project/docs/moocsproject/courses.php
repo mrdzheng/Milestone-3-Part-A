@@ -145,7 +145,7 @@
              while($info = mysql_fetch_array($data)) 
              { 
                 $image = "<img src=\"" . $info['course_image'] . "\" alt=\"Course Image\" height=\"100\" width= \"100\">";
-                $link = "<a href=\"" . $info['course_link'] . "\">Course Link</a>";
+                $link = "<a target='blank' href=\"" . $info['course_link'] . "\">Course Link</a>";
 
                  $table .= "<tr>"; //CREATE NEW ROW
                  $table .= "<td>". $image . "</td>";
