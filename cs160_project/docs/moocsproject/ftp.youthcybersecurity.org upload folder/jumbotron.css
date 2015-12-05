@@ -1,0 +1,177 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  
+}
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+
+/* Header
+-------------------------------------------------- */
+.jumbotron 
+{	
+	position: relative;
+	background: no-repeat center right;
+	background-image: url(image/banner/banner2.png);
+	background-position: 93%;/*MIGHT NOT NEED THIS*/
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	overflow: hidden;
+
+}
+
+.container .jumbotron, .container-fluid .jumbotron
+{
+	padding-right:0px;
+	padding-left:0px;
+}
+
+.trans
+{
+	background-color: #FFFFFF;
+	width:50%;
+	opacity: 0.7;
+}
+
+.trans h1
+{
+	opacity: 1.0;
+	font-weight: bold;
+  	color: #000000;
+}
+
+.trans p
+{
+	opacity: 1.0;
+	font-weight: bold;
+  	color: #000000;
+}
+
+.trans a
+{
+	opacity: 1.0;
+	font-weight: bold;
+  	color: #FFFFFF;
+}
+
+.row
+{
+	border-radius: 25px;
+	background-color: #E2E2E2;
+}
+
+
+/* Featurettes
+-------------------------------------------------- */
+.featurette-divider {
+  margin: 20px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.featurette-image
+{
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+/* OFF CANVAS
+-------------------------------------------------- */
+
+@media screen and (max-width: 767px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all .25s ease-out;
+         -o-transition: all .25s ease-out;
+            transition: all .25s ease-out;
+  }
+
+  .row-offcanvas-right {
+    right: 0;
+  }
+
+  .row-offcanvas-left {
+    left: 0;
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-right.active {
+    right: 50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left.active {
+    left: 50%; /* 6 columns */
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 50%; /* 6 columns */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

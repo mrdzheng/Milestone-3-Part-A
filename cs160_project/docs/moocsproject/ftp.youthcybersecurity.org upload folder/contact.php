@@ -1,6 +1,6 @@
 <?php
 	session_start();
-
+	
 	if (isset($_SESSION["loggedin"])) {
 		$loggedin = $_SESSION["loggedin"];
 	}
@@ -13,11 +13,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="This is the contact page for Project SAND">
+    <meta name="author" content="Alvin Ko">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>About</title>
+    <title>Home</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -55,10 +55,10 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="index.php">Home</a></li>
-            <li class ="active"><a href="about.php">About</a></li>
-            <li><a href="contact.php">Contact</a></li>
+            <li><a href="about.php">About</a></li>
+            <li class="active"><a href="contact.php">Contact</a></li>
             <li><a href="courses.php">Courses</a></li>
-			<?php
+            <?php
 				if (isset($loggedin)) {
 			
 					if ($loggedin) {
@@ -75,13 +75,13 @@
 					echo "<li><a href='signup.php'>Sign Up</a></li>";
 				}
 			?>
-            <li>
+			
+			<li>
 				<form name="form1" method="post" action="course_search.php">
 					<input name="search" type="text" size="40" maxlength="50"/>
 					<input type="submit" name="Submit" value="Search"/>
 				</form>
 			</li>
-			
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -92,81 +92,74 @@
     <div class="container">
       <div class="jumbotron">
         <div class= "trans">
-        <h1>About Us</h1>
+        <h1>Contact Us</h1>
         <p>Project SAND</p>
-        <p><a class="btn btn-primary btn-lg" href="index.php" role="button">Home &raquo;</a></p>
+        <p><a class="btn btn-primary btn-lg" href="about.php" role="button">Learn more &raquo;</a></p>
       </div>
       </div>
     </div>
 
-    <!-- START THE FEATURETTES -->
+    <div class="container">
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Our Promise <span class="text-muted"></span></h2>
+          <p class="lead">We at Project SANDS are committed to bringing you the best of the best. Our online support is available during standard business hours from Monday to Friday, 9am to 5pm. Feel free to email us. Expect a response within 24 hours. Our office is located at Macquarie Hall in San Jose State University. </p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive center-block" src="image/logo1.png" alt="logo" >
+        </div>
+      </div>
 
-    <div class="container marketing">
       <hr class="featurette-divider">
 
       <div class="row featurette" style="background-color:white">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Project SAND <span class="text-muted"></span></h2>
-          <p class="lead">Online courses are becoming a popular way to pursue higher-level education. Students no longer have to sit in a classroom and listen to a lecturer for an hour. Online ourses provide a way of engaging students that could not be done in a traditional classroom setting. Here at Project SAND, we believe the future of education starts here.</p>
+        <div class="col-md-6">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Alvin</td>
+                <td>Ko</td>
+                <td>alvin.ko@sjsu.edu</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Dave</td>
+                <td>Zheng</td>
+                <td>dave.zheng@sjsu.edu</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Nick</td>
+                <td>Saric</td>
+                <td>nick.saric@sjsu.edu</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Steve</td>
+                <td>Lee</td>
+                <td>steve.lee@sjsu.edu</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Dave Zheng <span class="text-muted">Chief Executive Officer</span></h2>
-          <p class="lead">Dave is a senior studying Electrical Engineering and Computer Science (EECS) at SJSU. He spend a lot of time in the IEEE room. He is the founder of Spartan Dragon Boat.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" src="image/dave_profile.png" alt="Dave Zheng" >
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Alvin Ko <span class="text-muted">Chief Security Officer</span></h2>
-          <p class="lead">Alvin Ko is a graduating senior studying Computer Science at SJSU. When he's not at work or at school, you can find him paddling on an outrigger canoe or dragon boat!</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" src="image/alvin_profile.png" alt="Alvin Ko">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Nick Saric <span class="text-muted">Chief Technology Officer</span></h2>
-          <p class="lead">Nick Saric is a senior studying Computer Science at SJSU. He enjoys spending time in the CS room, gamining, and hanging out with friends when he is not hard at work programming</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" src="image/nick_profile.png" alt="Nick Saric">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-    <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Steve Lee <span class="text-muted">Head of Engineering</span></h2>
-          <p class="lead">Steve Lee is a senior studying Computer Science at SJSU. He is the "keep calm and code on" kind of guy on the team. Got a problem? Don't worry. He's got your back. Cool like an ice cube. Whoosh!</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" src="image/steve_profile.png" alt="Steve Lee">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
+      <hr>
 
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2015 Project SAND &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2015 Project SANDS &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
-    </div>
-
+    </div> <!-- /container -->
 
 
     <!-- Bootstrap core JavaScript

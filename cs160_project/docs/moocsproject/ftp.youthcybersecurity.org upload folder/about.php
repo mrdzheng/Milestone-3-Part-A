@@ -107,7 +107,7 @@
       <div class="row featurette" style="background-color:white">
         <div class="col-md-7">
           <h2 class="featurette-heading">Project SAND <span class="text-muted"></span></h2>
-          <p class="lead">Online courses are becoming a popular way to pursue higher-level education. Students no longer have to sit in a classroom and listen to a lecturer for an hour. Online ourses provide a way of engaging students that could not be done in a traditional classroom setting. Here at Project SAND, we believe the future of education starts here.</p>
+          <p class="lead">Online courses are becoming a popular way to pursue higher-level education. Students no longer have to sit in a classroom and listen to a lecturer for an hour. Online ourses provide a way of engaging students that could not be done in a traditional classroom setting. Here at Project SANDS, we believe the future of education starts here.</p>
         </div>
       </div>
 
