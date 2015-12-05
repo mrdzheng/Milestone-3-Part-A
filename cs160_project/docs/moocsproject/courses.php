@@ -137,14 +137,18 @@
                        <th>Site</th>
                        <th>Fee</th>
                        <th>University</th>
+                       <th>Course Link</th>
                        </tr></thead>"; /*end of header row*/
              $table .= "<tbody>";
 
             //PRINTS OUT DATA IN THE PRODUCTS TABLE OF THE TEST DATABASE
              while($info = mysql_fetch_array($data)) 
              { 
+                $image = "<img src=\"" . $info['course_image'] . "\" alt=\"Course Image\" height=\"100\" width= \"100\">";
+                $link = "<a href=\"" . $info['course_link'] . "\">Course Link</a>";
+
                  $table .= "<tr>"; //CREATE NEW ROW
-                 $table .= "<td>". $info['course_image'] . "</td>";
+                 $table .= "<td>". $image . "</td>";
                  $table .= "<td>". $info['title'] . "</td> "; 
                  $table .= "<td>". $info['id'] . " </td>";
                  $table .= "<td>". $info['start_date'] . " </td>";
@@ -153,6 +157,7 @@
                  $table .= "<td>". $info['site'] . " </td>";
                  $table .= "<td>". $info['course_fee'] . " </td>";
                  $table .= "<td>". $info['university'] . "</td>"; 
+                 $table .= "<td>". $link . "</td>"; 
                  $table .= "</tr>"; //END ROW*/
 
                 /*
@@ -243,7 +248,8 @@
       <hr>
 
       <footer>
-        <p>&copy; 2015 Company, Inc.</p>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2015 Project SANDS &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
 
     </div><!--/.container-->
