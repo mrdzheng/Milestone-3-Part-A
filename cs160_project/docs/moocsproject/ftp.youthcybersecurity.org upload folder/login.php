@@ -68,10 +68,12 @@
           {
             //do something here
             //echo "Access Granted.";
+			ob_start();
+			header("Location: ./account_info.php");
 			$_SESSION["username"] = $_POST["username"];
 			$_SESSION["loggedin"] = true;
-			//header("Location: ./account_info.php");
-			echo "<script>window.location = './account_info.php';</script>";
+			//echo "<script>window.location = './account_info.php';</script>";
+			exit();
           }
           else
           {
