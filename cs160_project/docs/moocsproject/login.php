@@ -68,18 +68,18 @@
           {
             //do something here
             //echo "Access Granted.";
-			ob_start();
-			$host  = $_SERVER['HTTP_HOST'];
-			$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-			$extra = 'account_info.php';
+			//ob_start();
+			//$host  = $_SERVER['HTTP_HOST'];
+			//$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+			//$extra = 'account_info.php';
 			
 			//header("Location: ./account_info.php");
 			$_SESSION["username"] = $_POST["username"];
 			$_SESSION["loggedin"] = true;
 			
-			header("Location: http://$host$uri/$extra");
-			//echo "<script>window.location = './account_info.php';</script>";
-			exit();
+			//header("Location: http://$host$uri/$extra");
+			echo "<script>window.location = './account_info.php';</script>";
+			//exit();
           }
           else
           {
