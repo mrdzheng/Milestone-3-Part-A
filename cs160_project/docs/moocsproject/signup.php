@@ -194,7 +194,7 @@
               <!--Set Email-->
               <div class="form-group">
                 <label for="email">Email</label>
-                <input type="text" class="form-control" name = "email" id="email" placeholder="Enter Email" value= "">
+                <input type="password" class="form-control" name = "email" id="email" placeholder="Enter Email" value= "">
               </div>
 
               <!--Set Type-->

@@ -161,7 +161,7 @@
               <!--Set Password-->
               <div class="form-group">
                 <label for="password">Password</label>
-                <input type="text" class="form-control" name = "password" id="password" placeholder="Enter Password" value= "">
+                <input type="password" class="form-control" name = "password" id="password" placeholder="Enter Password" value= "">
               </div>
 
               <div class="checkbox">
