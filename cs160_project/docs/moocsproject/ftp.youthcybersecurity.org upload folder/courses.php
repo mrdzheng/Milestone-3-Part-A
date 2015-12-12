@@ -145,8 +145,9 @@
              while($info = mysql_fetch_array($data)) 
              { 
                 $image = "<img src=\"" . $info['course_image'] . "\" alt=\"Course Image\" height=\"100\" width= \"100\">";
-                $link = "<a href=\"" . $info['course_link'] . "\">Course Link</a>";
+                $link = "<a target='blank' href=\"" . $info['course_link'] . "\">Course Link</a>";
 
+                 $table .= "<tr>"; //CREATE NEW ROW
                  $table .= "<tr>"; //CREATE NEW ROW
                  $table .= "<td>". $image . "</td>";
                  $table .= "<td>". $info['title'] . "</td> "; 
@@ -249,7 +250,7 @@
 
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2015 Project SANDS &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2015 Project SAND &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
 
     </div><!--/.container-->
